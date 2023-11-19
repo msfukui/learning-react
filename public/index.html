@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <head>
   <meta charset="utf-8" />
+  <link rel="icon" href="favicon.ico">
   <title>React Samples</title>
 </head>
 <body>
@@ -10,8 +11,42 @@
   <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
 
   <script>
-    const dish = React.createElement("h1", { id: "shop", key: 0 }, "Baked Salmon");
-    const dessert = React.createElement("h2", { id: "item", key: 1 }, "Cocount Cream Pie");
+    const dish = React.createElement(
+      "section",
+      { id: "baked-salmon", key: 1 },
+      React.createElement("h1", { key: 2 }, "Baked Salmon"),
+      React.createElement(
+        "ul",
+        { className: "ingredients", key: 3 },
+        React.createElement("li", { key: 4 }, "2 lb Salmon"),
+        React.createElement("li", { key: 5 }, "5 sprigs fresh rosemary"),
+        React.createElement("li", { key: 6 }, "2 tablespoons olive oil"),
+        React.createElement("li", { key: 7 }, "2 small lemons"),
+        React.createElement("li", { key: 8 }, "1 teaspoon kosher salt"),
+        React.createElement("li", { key: 9 }, "4 cloves of chopped garlic")
+      ),
+      React.createElement(
+        "section",
+        { className: "instructions", key: 10 },
+        React.createElement("h2", { key: 11 }, "Cooking Instructions"),
+        React.createElement("p", { key: 12 }, "Preheat the oven to 425 degrees."),
+        React.createElement("p", {key: 13 }, "Lightly coat aluminum foil with oil."),
+        React.createElement("p", { key: 14 }, "Place salmon on foil."),
+        React.createElement(
+          "p",
+          { key: 15 },
+          "Cover with rosemary, slices lemons, and chopped garlic."
+        ),
+        React.createElement(
+          "p",
+          { key: 16 },
+          "Bake for 15-20 minutes until cooked through."
+        ),
+        React.createElement("p", { key: 17 }, "Remove from oven.")
+      )
+    );
+
+    const dessert = React.createElement("h2", { key: 18 }, "Cocount Cream Pie");
 
     ReactDOM.createRoot(document.getElementById("root")).render([dish, dessert]);
   </script>
