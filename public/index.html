@@ -10,6 +10,10 @@
   <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
 
   <script>
+    const dish = React.createElement("h1", { id: "shop", key: 0 }, "Baked Salmon");
+    const dessert = React.createElement("h2", { id: "item", key: 1 }, "Cocount Cream Pie");
+
+    ReactDOM.createRoot(document.getElementById("root")).render([dish, dessert]);
   </script>
 </body>
 </html>
