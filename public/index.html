@@ -22,19 +22,19 @@
       "0.5 teaspoon salt"
     ];
 
-    function IngredientsList(props) {
+    function IngredientsList({ title, items }) {
       return React.createElement(
         "section",
         { className: "ingredients-section" },
         React.createElement(
           "h2",
           { className: "ingredients-title" },
-          props.title,
+          title,
         ),
         React.createElement(
           "ul",
           { className: "ingredients-items" },
-          props.items.map((ingredinent, i) =>
+          items.map((ingredinent, i) =>
             React.createElement("li", { key: i }, ingredinent)
           )
         )
