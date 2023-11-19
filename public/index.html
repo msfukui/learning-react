@@ -11,6 +11,14 @@
   <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
 
   <script>
+    const items = [
+      "2 lb Salmon",
+      "5 sprigs fresh rosemary",
+      "2 tablespoons olive oil",
+      "2 small lemons",
+      "1 teaspoon kosher salt",
+      "4 cloves of chopped garlic"
+    ];
     const dish = React.createElement(
       "section",
       { id: "baked-salmon", key: 1 },
@@ -18,12 +26,7 @@
       React.createElement(
         "ul",
         { className: "ingredients", key: 3 },
-        React.createElement("li", { key: 4 }, "2 lb Salmon"),
-        React.createElement("li", { key: 5 }, "5 sprigs fresh rosemary"),
-        React.createElement("li", { key: 6 }, "2 tablespoons olive oil"),
-        React.createElement("li", { key: 7 }, "2 small lemons"),
-        React.createElement("li", { key: 8 }, "1 teaspoon kosher salt"),
-        React.createElement("li", { key: 9 }, "4 cloves of chopped garlic")
+        items.map((ingredinent, i) => React.createElement("li", { key: 3 + i }, ingredinent))
       ),
       React.createElement(
         "section",
