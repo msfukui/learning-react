@@ -1,9 +1,5 @@
 import React from "react";
-import { FaStar } from "react-icons/fa";
-
-const Star = ({ selected = false, onSelect = f => f }) => (
-  <FaStar color={selected ? "red" : "grey"} onClick={onSelect} />
-);
+import Star from "./Star";
 
 export default function StarRating({ totalStars = 5, selectedStars = 0, onRate = f => f }) {
   return (
