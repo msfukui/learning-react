@@ -9,10 +9,6 @@ export default function Recipe({ name, ingredients, steps }) {
       <h1>{name}</h1>
       <IngredientsList list={ingredients} />
       <Instructions title="Cooking Instructions" steps={steps} />
-      <StarRating
-        style={{ backgroundColor: "lightblue" }}
-        onDoubleClick={e => alert("double click")}
-      />
     </section>
   );
 }
