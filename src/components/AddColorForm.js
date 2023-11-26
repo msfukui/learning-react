@@ -1,28 +1,29 @@
-import React, { useState } from "react";
+import React from "react";
+import { useInput } from "./hooks";
+import { useColors } from "./ColorProvider";
 
-export default function AddColorFrom({ onNewColor = f => f }) {
-  const [title, setTitle] = useState("");
-  const [color, setColor] = useState("#000000");
+export default function AddColorFrom() {
+  const [titleProps, resetTitle] = useInput("");
+  const [colorProps, resetColor] = useInput("#000000");
+  const { addColor } = useColors();
 
   const sumbit = e => {
     e.preventDefault();
-    onNewColor(title, color);
-    setTitle("");
-    setColor("#000000");
+    addColor(titleProps.value, colorProps.value);
+    resetTitle();
+    resetColor();
   }
 
   return (
     <form onSubmit={sumbit}>
       <input
-        value={title}
-        onChange={event => setTitle(event.target.value)}
+        {...titleProps}
         type="text"
         placeholder="color title..."
         required
       />
       <input
-        value={color}
-        onChange={event => setColor(event.target.value)}
+        {...colorProps}
         type="color"
         required
       />
