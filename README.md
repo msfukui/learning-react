@@ -1,8 +1,14 @@
 # Learning React
 
+## Quick Start
+
+クイックスタート https://ja.react.dev/learn をひとつづつやっていくリポジトリです.
+
+## Developing React Apps
+
 「React ハンズオンラーニング Web アプリケーション開発のベストプラクティス」(Learning React Modern Patterns for Developing React Apps) (第2版) (ISBN978-4-87311-938-0) をやっていくリポジトリです.
 
-## Reference
+### Reference
 
 * https://github.com/moonhighway/learning-react
 
