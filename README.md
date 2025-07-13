@@ -1,8 +1,8 @@
 # Learning React
 
-## Quick Start
+## Start Guide
 
-クイックスタート https://ja.react.dev/learn をひとつづつやっていくリポジトリです.
+スタートガイド https://ja.react.dev/learn をひとつづつやっていくリポジトリです.
 
 ## Developing React Apps
 
