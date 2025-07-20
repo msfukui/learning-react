@@ -17,6 +17,7 @@ export default function MyApp() {
       <h1>Welcome to my app</h1>
       <MyButton />
       <AboutPage />
+      <img className="avatar" src="./msfukui.jpg" width="100" height="100" />
     </div>
   );
 }
