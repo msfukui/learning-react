@@ -38,13 +38,53 @@ function Profile() {
   );
 }
 
+function AdminPanel() {
+  return (
+    <div>
+      <h1>Admin Panel</h1>
+      <p>Only admins can see this.</p>
+    </div>
+  );
+}
+
+function LoginForm() {
+  return (
+    <div>
+      <h1>Login</h1>
+      <form>
+        <label>
+          Username:
+          <input type="text" name="username" />
+        </label>
+        <br />
+        <label>
+          Password:
+          <input type="password" name="password" />
+        </label>
+        <br />
+        <button type="submit">Login</button>
+      </form>
+    </div>
+  );
+}
+
 export default function MyApp() {
+  let content;
+  let isLoggedIn = true;
+  if (isLoggedIn) {
+    content = <AdminPanel />;
+  } else {
+    content = <LoginForm />;
+  }
   return (
     <div>
       <h1>Welcome to my app</h1>
       <MyButton />
       <AboutPage />
       <Profile />
+      <div>{content}</div>
+      <div>{isLoggedIn ? <AdminPanel /> : <LoginForm />}</div>
+      <div>{isLoggedIn && <AdminPanel />}</div>
     </div>
   );
 }
