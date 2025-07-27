@@ -1,5 +1,8 @@
 function MyButton() {
-  return <button>I'm a button</button>;
+  function handleClick() {
+    alert("You clicked me!");
+  }
+  return <button onClick={handleClick}>Click me</button>;
 }
 
 function AboutPage() {
@@ -70,20 +73,14 @@ function LoginForm() {
 
 function MyList() {
   const products = [
-    { title: 'Cabbage', id: 1 },
-    { title: 'Garlic', id: 2 },
-    { title: 'Apple', id: 3 },
-  ]
-  const listItems = products.map((product) =>
-    <li key={product.id}>
-      {product.title}
-    </li>
-  );
-  return (
-    <ul>
-      {listItems}
-    </ul>
-  );
+    { title: "Cabbage", id: 1 },
+    { title: "Garlic", id: 2 },
+    { title: "Apple", id: 3 },
+  ];
+  const listItems = products.map((product) => (
+    <li key={product.id}>{product.title}</li>
+  ));
+  return <ul>{listItems}</ul>;
 }
 
 export default function MyApp() {
