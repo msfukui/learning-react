@@ -1,8 +1,9 @@
 function MyButton() {
+  const [count, setCount] = React.useState(0);
   function handleClick() {
-    alert("You clicked me!");
+    setCount(count + 1);
   }
-  return <button onClick={handleClick}>Click me</button>;
+  return <button onClick={handleClick}>Clicked {count} times</button>;
 }
 
 function AboutPage() {
@@ -94,6 +95,7 @@ export default function MyApp() {
   return (
     <div>
       <h1>Welcome to my app</h1>
+      <MyButton />
       <MyButton />
       <AboutPage />
       <Profile />
