@@ -84,6 +84,26 @@ function MyList() {
   return <ul>{listItems}</ul>;
 }
 
+function MySharedButtonParent() {
+  const [count, setCount] = React.useState(0);
+
+  function handleClick() {
+    setCount(count + 1);
+  }
+
+  return (
+    <div>
+      <h1>Counters that update together</h1>
+      <MySharedButton count={count} onClick={handleClick} />
+      <MySharedButton count={count} onClick={handleClick} />
+    </div>
+  );
+}
+
+function MySharedButton({ count, onClick }) {
+  return <button onClick={onClick}>Clicked {count} times</button>;
+}
+
 export default function MyApp() {
   let content;
   let isLoggedIn = true;
@@ -103,6 +123,7 @@ export default function MyApp() {
       <div>{isLoggedIn ? <AdminPanel /> : <LoginForm />}</div>
       <div>{isLoggedIn && <AdminPanel />}</div>
       <MyList />
+      <MySharedButtonParent />
     </div>
   );
 }
